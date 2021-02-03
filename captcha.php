@@ -7,12 +7,24 @@
     <title>Captcha Example</title>
 </head>
 
-<body>
+<body onload='new_captcha()'>
 
 <div id='div_captcha'>
     <img id='img_captcha' src=''>
 </div>
 <button onclick='new_captcha()'>New Captcha</button>
+<form method = "POST">
+    <div>
+        <input type="text" placeholder = "Enter The Captcha" name="input_captcha"/>
+    </div>
+    <div>
+        <input type="submit" name="validate" formaction="validate.php" value = "Validate"/>
+    </div>
+</form>
+
+<?php
+    session_start();
+?>
 
 
 <script>
